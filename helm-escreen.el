@@ -32,9 +32,8 @@
 (defun helm-escreen-select-escreen ()
   "Use helm to select an escreen."
   (interactive)
-  (let* ((without-current-screen (remove (helm-escreen-current-escreen) helm-escreen-name-alist))
-         (escreen-num (helm-comp-read "Select an escreen: "
-                                      without-current-screen
+  (let* ((escreen-num (helm-comp-read "Select an escreen: "
+                                      helm-escreen-name-alist
                                       :alistp t
                                       :must-match 'confirm))
          (escreen-cons-cell (rassoc escreen-num helm-escreen-name-alist))
